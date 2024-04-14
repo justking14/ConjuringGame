@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- comment block -->
+<html>
+
+<head>
+     <title>New Engine</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <canvas id="c" width="1024" height="742" style="border:1rem solid black;"></canvas>
+
+     <div id="fps-display">FPS: <span id="fps-value">0</span></div>
+
+     <style>
+          *{
+               cursor: none;
+          }
+          #fps-display {
+               position: fixed;
+               top: 10px;
+               right: 10px;
+               background-color: rgba(0, 0, 0, 0.7);
+               color: white;
+               padding: 8px;
+               font-family: Arial, sans-serif;
+               font-size: 14px;
+               border-radius: 5px;
+          }
+     
+     </style>
+
+
+
+<script src="Engines/UtilEngine/util.js"></script>
+<script src="constants.js"></script>
+
+
+<script src="Engines/MathEngine/Vector.js"></script>
+<script src="Engines/MathEngine/Trig.js"></script>
+
+
+<script src="Engines/RenderEngine/stickFigures/graphs/node.js"></script>
+<script src="Engines/RenderEngine/stickFigures/graphs/edge.js"></script>
+<script src="Engines/RenderEngine/stickFigures/graphs/puppet.js"></script>
+<script src="Engines/RenderEngine/stickFigures/graphs/raven.js"></script>
+
+
+<script src="Engines/RenderEngine/stickFigures/stickElements/0_dot.js"></script>
+<script src="Engines/RenderEngine/stickFigures/stickElements/0_stick.js"></script>
+<script src="Engines/RenderEngine/stickFigures/stickElements/1_stickFigure.js"></script>
+<script src="Engines/RenderEngine/stickFigures/stickElements/2_alphanumericEntity.js"></script>
+
+
+
+<script src="Engines/RenderEngine/stickFigures/sissy.js"></script>
+
+<script src="Engines/RenderEngine/stickFigures/human.js"></script>
+<script src="Engines/RenderEngine/stickFigures/boulder.js"></script>
+<script src="Engines/RenderEngine/stickFigures/mountain.js"></script>
+<script src="Engines/RenderEngine/stickFigures/bird.js"></script>
+<script src="Engines/RenderEngine/stickFigures/cloud.js"></script>
+<script src="Engines/RenderEngine/stickFigures/meter.js"></script>
+<script src="Engines/RenderEngine/stickFigures/sun.js"></script>
+<script src="Engines/RenderEngine/stickFigures/summoningCircle.js"></script>
+<script src="Engines/RenderEngine/stickFigures/ground.js"></script>
+
+
+<script src="Engines/RenderEngine/color.js"></script>
+
+
+<script src="Engines/RenderEngine/render.js"></script>
+
+
+<script src="Engines/GameEngine.js"></script>
+<script src="Engines/InputEngine.js"></script>
+<script src="Engines/EventEngine.js"></script>
+
+<script src="GameObjects/GameObject.js"></script>
+
+<script src="SummitFiles/gameManager.js"></script>
+
+<script src="SummitFiles/0_settingUp.js"></script>
+<script src="SummitFiles/1_gameRunning.js"></script>
+<script src="SummitFiles/2_boulderRolling.js"></script>
+<script src="SummitFiles/3_beforeTheFall.js"></script>
+<script src="SummitFiles/4_falling.js"></script>
+<script src="SummitFiles/5_resetting.js"></script>
+
+
+
+
+</head>
+
+
+
+<body>
+     <script>
+          
+          const canvas = document.getElementById("c");
+          const ctx = canvas.getContext("2d");
+          let CANVAS_WIDTH = 1024
+          let CANVAS_HEIGHT = 742
+          canvas.width = CANVAS_WIDTH;
+          canvas.height = CANVAS_HEIGHT;
+
+          let ge = new GameEngine(new summitManager(), ctx)
+          //setInterval(()=>ge.init(), 1000)
+          ge.init()
+     </script>
+
+</body>
+
+</html>
